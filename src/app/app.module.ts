@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import LogoBannerModule from './logoBanner/logoBanner.module';
 import GridFilterPanelModule from './gridFilterPanel/gridFilterPanel.module';
+import GridModule from './grid/grid.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,9 +15,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     LogoBannerModule,
-    GridFilterPanelModule
+    GridFilterPanelModule,
+    GridModule
   ],
   bootstrap: [AppComponent]
 })
