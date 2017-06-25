@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import LogoBannerModule from './logoBanner/logoBanner.module';
+import GridFilterPanelModule from './gridFilterPanel/gridFilterPanel.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    LogoBannerModule
+    LogoBannerModule,
+    GridFilterPanelModule
   ],
   bootstrap: [AppComponent]
 })
