@@ -1,26 +1,25 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+
+import { Deal } from './dataContracts/deal';
+import { DealService } from './dealService';
 
 @Component({
   selector: 'grid',
-  templateUrl: './grid.component.html'
+  templateUrl: './grid.component.html',
+  providers: [DealService]
 })
 export class GridComponent {
     private dealObject: any;
-    private dealsResponse: Array<any>;
+    private dealsResponse: Array<Deal>;
+    private dealService: DealService;
 
-    private http: Http;
+  constructor(dealService: DealService) {
+    this.dealService = dealService;
 
-    constructor(http: Http) {
-        this.http = http;
-
-    this.http.get('assets/deals.json')
-        .map((response: Response) => <any[]>response.json())
-        .subscribe(deals => {       
-            this.dealObject = deals;
-            this.dealsResponse = this.dealObject.deals;
+    this.dealService.getProducts()
+      .subscribe(deals => {
+        this.dealObject = deals;
+        this.dealsResponse = this.dealObject.deals;
       });
   }
 }

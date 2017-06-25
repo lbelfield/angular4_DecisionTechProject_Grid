@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 
 import { GridComponent } from './grid.component';
 
+import { DealService } from './dealService';
+
 @NgModule({
   imports: [BrowserModule, HttpModule],
   declarations: [GridComponent],
