@@ -1,3 +1,4 @@
+<grid-filter (filterClicked)='onFilterClicked($event)'></grid-filter>
 <table>
     <tr>
         <th>{{about}}</th>
@@ -8,10 +9,10 @@
         <th>{{mobile}}</th>
         <th>{{cost}}</th>
     </tr>
-    <tr *ngFor="let deal of dealsResponse">
+    <tr *ngFor="let deal of dealsResponse | dealFilterPipe">
         <td>{{deal.title}}</td>
         <td>{{deal.contractLength | contractLengthPipe}}</td>
-        <td>{{deal.speed.label}}{{deal.usage.label}}</td>
+        <td>{{deal.speed.label}} {{deal.usage.label}}</td>
         <td><img src="{{deal.offer.smallLogo}}"></td>
         <td>{{tv}}</td>
         <td>{{deal.mobile}}</td>

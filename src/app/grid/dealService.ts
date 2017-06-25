@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 
 import { Deal } from './dataContracts/deal';
 
+// todo create a shared folder and extract this out into a shared module?
+
 @Injectable()
 export class DealService {
 
