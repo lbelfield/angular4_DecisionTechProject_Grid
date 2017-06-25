@@ -10,7 +10,7 @@
     </tr>
     <tr *ngFor="let deal of dealsResponse">
         <td>{{deal.title}}</td>
-        <td>{{deal.contractLength}}</td>
+        <td>{{deal.contractLength | contractLengthPipe}}</td>
         <td>{{deal.speed.label}}{{deal.usage.label}}</td>
         <td><img src="{{deal.offer.smallLogo}}"></td>
         <td>{{tv}}</td>
