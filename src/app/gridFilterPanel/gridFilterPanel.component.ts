@@ -9,10 +9,10 @@ export class GridFilterPanelComponent {
   private broadbandLabel: string;
   private tvLabel: string;
   private mobileLabel: string;
-  public isBroadbandChecked: boolean;
-  public isTvChecked: boolean;
-  public isMobileChecked: boolean;
-  public filterArray: Array<string>;
+  private isBroadbandChecked: boolean;
+  private isTvChecked: boolean;
+  private isMobileChecked: boolean;
+  private filterArray: Array<string>;
   
   @Output() filterClicked: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();  
 
