@@ -48,6 +48,7 @@ describe('GridFilterPanelComponent', () => {
     app.isBroadbandChecked = true;    
     app.onClick();
     expect(app.filterArray[0]).toBe("Broadband");
+    expect(app.filterArray.length).toBe(1);
   }));
 
   it('add TV to filterArray', async(() => {
@@ -77,6 +78,7 @@ describe('GridFilterPanelComponent', () => {
     app.onClick();
     expect(app.filterArray[0]).toBe("Entertainment");
     expect(app.filterArray[1]).toBe("Mobile");
+    expect(app.filterArray.length).toBe(2);
   }));
 
  it('add Broadband, Mobile and Tv to filterArray', async(() => {
@@ -90,6 +92,7 @@ describe('GridFilterPanelComponent', () => {
     expect(app.filterArray[0]).toBe("Broadband");
     expect(app.filterArray[1]).toBe("Entertainment");
     expect(app.filterArray[2]).toBe("Mobile");
+    expect(app.filterArray.length).toBe(3);
   }));
 
 });
