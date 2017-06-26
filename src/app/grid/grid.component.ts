@@ -30,7 +30,8 @@ export class GridComponent {
         this.initialDealsResponse = this.dealObject.deals;
         this.dealsResponse = this.initialDealsResponse;
       });
-    
+      
+      // todo unit test
       this.about = "About";
       this.contractLength = "contract length";
       this.speedUsage = "speed/usage";
@@ -40,7 +41,8 @@ export class GridComponent {
       this.cost = "Cost";
   }
 
-    onFilterClicked(filterArray: Array<string>): void {
+    // todo unit test
+    public onFilterClicked(filterArray: Array<string>): void {
       
       //todo find a better way as pushed for time
       if(filterArray.length === 1){

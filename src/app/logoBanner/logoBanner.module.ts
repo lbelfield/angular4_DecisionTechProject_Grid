@@ -9,4 +9,4 @@ import { LogoBannerComponent } from './logoBanner.component';
   exports: [LogoBannerComponent]
 })
 
-export default class LogoBannerModule { };
+export class LogoBannerModule { };

@@ -15,6 +15,7 @@ export class GridFilterPanelComponent {
   
   @Output() filterClicked: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();  
 
+  // todo unit test
   constructor() {
     this.broadbandLabel = "Broadband";
     this.tvLabel = "TV";
@@ -24,7 +25,8 @@ export class GridFilterPanelComponent {
     this.isMobileChecked = false;
   }
 
-    onClick() {
+    // todo unit test
+    public onClick() {
       var filterArray = new Array<string>();
 
       if(this.isBroadbandChecked){

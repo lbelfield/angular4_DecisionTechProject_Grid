@@ -10,4 +10,4 @@ import { GridFilterPanelComponent } from './gridFilterPanel.component';
   exports: [GridFilterPanelComponent]
 })
 
-export default class GridFilterPanelModule { };
+export class GridFilterPanelModule { };
