@@ -9,13 +9,13 @@ export class GridFilterPanelComponent {
   private broadbandLabel: string;
   private tvLabel: string;
   private mobileLabel: string;
-  private isBroadbandChecked: any;
-  private isTvChecked: any;
-  private isMobileChecked: any;
+  public isBroadbandChecked: boolean;
+  public isTvChecked: boolean;
+  public isMobileChecked: boolean;
+  public filterArray: Array<string>;
   
   @Output() filterClicked: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();  
 
-  // todo unit test
   constructor() {
     this.broadbandLabel = "Broadband";
     this.tvLabel = "TV";
@@ -23,22 +23,22 @@ export class GridFilterPanelComponent {
     this.isBroadbandChecked = false;
     this.isTvChecked = false;
     this.isMobileChecked = false;
+    this.filterArray = new Array<string>();
   }
 
-    // todo unit test
     public onClick() {
-      var filterArray = new Array<string>();
+      this.filterArray = []       
 
       if(this.isBroadbandChecked){
-        filterArray.push(this.broadbandLabel);
+        this.filterArray.push(this.broadbandLabel);
       }
       if(this.isTvChecked){
-        filterArray.push("Entertainment");
+        this.filterArray.push("Entertainment");
       }
       if(this.isMobileChecked){
-        filterArray.push(this.mobileLabel);
+        this.filterArray.push(this.mobileLabel);
       }
 
-      this.filterClicked.emit(filterArray);
+      this.filterClicked.emit(this.filterArray);
   }
 }
