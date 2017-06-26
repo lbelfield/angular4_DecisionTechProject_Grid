@@ -8,8 +8,6 @@ import { GridComponent } from './grid.component';
 import { ContractLengthPipe } from './pipes/contractLength.pipe';
 import { DealFilterPipe } from './pipes/dealFilter.pipe';
 
-import { DealService } from './dealService';
-
 @NgModule({
   imports: [BrowserModule, HttpModule, GridFilterPanelModule],
   declarations: [GridComponent, ContractLengthPipe, DealFilterPipe],

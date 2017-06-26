@@ -6,6 +6,8 @@
     "baseUrl": "",
     "types": []
   },
+  "emitDecoratorMetadata": true,
+  "experimentalDecorators": true,
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

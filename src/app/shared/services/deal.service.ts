@@ -3,9 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Deal } from './dataContracts/deal';
-
-// todo create a shared folder and extract this out into a shared module?
+import { Deal } from '../../grid/dataContracts/deal';
 
 @Injectable()
 export class DealService {

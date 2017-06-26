@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Deal } from './dataContracts/deal';
-import { DealService } from './dealService';
+import { DealService } from '../shared/services/deal.service';
 
 @Component({
   selector: 'grid',
