@@ -3,7 +3,7 @@
 Angular4 broadband filter project.
 Code Unit Tested via Karma.
 Angular4: @Output decorator, Bindings (Interpolation, Property Binding, Event Binding, Two Way Binding), (httpService) Observables and RxJS, Modules for encapsulation, Custom Pipes, Built in Directives, EventEmitters and Sass.
-Also, webpack, 
+Also, webpack, ts and npm scripts (package.json) (not created by me, but see angular2-skeleton for verbose setup of these)
 
 ## DecisionTechAngularSeed
 
