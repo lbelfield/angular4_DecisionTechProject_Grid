@@ -1,4 +1,4 @@
-<grid-filter (filterClicked)='onFilterClicked($event)'></grid-filter>
+<grid-filter (checkBoxFilterClicked)='onGridFilterPanelBoxClicked($event)'></grid-filter>
 <table>
     <tr>
         <th>{{about}}</th>
@@ -9,7 +9,7 @@
         <th>{{mobile}}</th>
         <th>{{cost}}</th>
     </tr>
-    <tr *ngFor="let deal of dealsResponse | dealFilterPipe">
+    <tr *ngFor="let deal of dealsResponse | dealFilterPipe:gridFilterPanelCheckbox">
         <td>{{deal.title}}</td>
         <td>{{deal.contractLength | contractLengthPipe}}</td>
         <td>{{deal.speed.label}} {{deal.usage.label}}</td>

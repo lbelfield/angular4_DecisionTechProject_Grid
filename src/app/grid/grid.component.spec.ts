@@ -28,7 +28,68 @@ describe('GridComponent', () => {
 
   }));
 
-  it('dealsResponse should return one deal', async(() => {
+    it('labels', async(() => {
+    const fixture = TestBed.createComponent(GridComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    expect(app.about).toBe("About");
+    expect(app.contractLength).toBe("contract length");
+    expect(app.speedUsage).toBe("speed/usage");
+    expect(app.offer).toBe("Offer");
+    expect(app.tv).toBe("TV");
+    expect(app.mobile).toBe("Mobile");
+    expect(app.cost).toBe("Cost");
+  }));
+
+  it('onGridFilterPanelBoxClicked() array should be length 1', async(() => {
+    //Assign
+    const fixture = TestBed.createComponent(GridComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    app.initialDealsResponse = [
+        {"title": "Hello World Broadband"}, 
+        {"title" : "Hello World Tv"}, 
+        {"title": "foo Tv"}, 
+        {"title": "bar Entertainment"},
+        {"title": "Hope you liked the pun - Entertainment"},
+        {"title": "Entertainment yet again"}
+        ]
+
+    var filterArray = new Array<string>();
+    filterArray.push("Broadband");
+
+    //Act
+    app.onGridFilterPanelBoxClicked(filterArray);
+
+    //Assert
+    expect(app.gridFilterPanelCheckbox).toBe(filterArray);
+    expect(app.gridFilterPanelCheckbox.length).toBe(1);
+  }));
+
+    it('onGridFilterPanelBoxClicked() array should be length 2', async(() => {
+    const fixture = TestBed.createComponent(GridComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    app.initialDealsResponse = [
+        {"title": "Hello World Broadband"}, 
+        {"title" : "Hello World Tv"}, 
+        {"title": "foo Tv"}, 
+        {"title": "bar Entertainment"},
+        {"title": "Hope you liked the pun - Entertainment"},
+        {"title": "Entertainment yet again"}
+        ]
+
+    var filterArray = new Array<string>();
+    filterArray.push("Broadband");
+    filterArray.push("Tv");
+
+    app.onGridFilterPanelBoxClicked(filterArray);
+
+    expect(app.gridFilterPanelCheckbox).toBe(filterArray);
+    expect(app.gridFilterPanelCheckbox.length).toBe(2);
+  }));
+
+it('onGridFilterPanelBoxClicked() array should be length 3', async(() => {
     const fixture = TestBed.createComponent(GridComponent);
     const app = fixture.debugElement.componentInstance;
 
@@ -43,69 +104,13 @@ describe('GridComponent', () => {
 
     var filterArray = new Array<string>();
     filterArray.push("Broadband");
-
-    app.onFilterClicked(filterArray);
-    expect(app.dealsResponse[0].title).toBe("Hello World Broadband");
-    expect(app.dealsResponse.length).toBe(1);
-  }));
-
-
-    it('dealsResponse should return two deals', async(() => {
-    const fixture = TestBed.createComponent(GridComponent);
-    const app = fixture.debugElement.componentInstance;
-
-    app.initialDealsResponse = [
-        {"title": "Hello World Broadband"}, 
-        { "title" : "Hello World Tv"}, 
-        {"title": "foo Tv"}, 
-        {"title": "bar Entertainment"},
-        {"title": "Hope you liked the pun - Entertainment"},
-        {"title": "Entertainment yet again"}
-        ]
-
-    var filterArray = new Array<string>();
     filterArray.push("Tv");
-
-    app.onFilterClicked(filterArray);
-    expect(app.dealsResponse[0].title).toBe("Hello World Tv");
-    expect(app.dealsResponse[1].title).toBe("foo Tv");
-    expect(app.dealsResponse.length).toBe(2);
-  }));
-
-it('dealsResponse should return three deals', async(() => {
-    const fixture = TestBed.createComponent(GridComponent);
-    const app = fixture.debugElement.componentInstance;
-
-    app.initialDealsResponse = [
-        {"title": "Hello World Broadband"}, 
-        { "title" : "Hello World Tv"}, 
-        {"title": "foo Tv"}, 
-        {"title": "bar Entertainment"},
-        {"title": "Hope you liked the pun - Entertainment"},
-        {"title": "Entertainment yet again"}
-        ]
-
-    var filterArray = new Array<string>();
     filterArray.push("Entertainment");
 
-    app.onFilterClicked(filterArray);
-    expect(app.dealsResponse[0].title).toBe("bar Entertainment");
-    expect(app.dealsResponse[1].title).toBe("Hope you liked the pun - Entertainment");
-    expect(app.dealsResponse[2].title).toBe("Entertainment yet again");
-    expect(app.dealsResponse.length).toBe(3);
-  }));
+    app.onGridFilterPanelBoxClicked(filterArray);
 
-  it('labels', async(() => {
-    const fixture = TestBed.createComponent(GridComponent);
-    const app = fixture.debugElement.componentInstance;
-
-    expect(app.about).toBe("About");
-    expect(app.contractLength).toBe("contract length");
-    expect(app.speedUsage).toBe("speed/usage");
-    expect(app.offer).toBe("Offer");
-    expect(app.tv).toBe("TV");
-    expect(app.mobile).toBe("Mobile");
-    expect(app.cost).toBe("Cost");
+    expect(app.gridFilterPanelCheckbox).toBe(filterArray);
+    expect(app.gridFilterPanelCheckbox.length).toBe(3);
   }));
 
 });

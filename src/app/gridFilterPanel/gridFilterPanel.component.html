@@ -2,17 +2,17 @@
 		<ul>
 		    <li>
 		         <label>
-		            <input type="checkbox" [(ngModel)]="isBroadbandChecked" (ngModelChange)='onClick()'> {{broadbandLabel}}
+		            <input type="checkbox" [(ngModel)]="isBroadbandChecked" (ngModelChange)='onCheckBoxClick()'> {{broadbandLabel}}
 		        </label>
 		    </li>
 			<li> 
 				<label>
-					<input type="checkbox" [(ngModel)]="isTvChecked" (ngModelChange)='onClick()'> {{tvLabel}}
+					<input type="checkbox" [(ngModel)]="isTvChecked" (ngModelChange)='onCheckBoxClick()'> {{tvLabel}}
 				</label>
 			</li>
 			<li> 
 				<label>
-					<input type="checkbox" [(ngModel)]="isMobileChecked" (ngModelChange)='onClick()'> {{mobileLabel}}
+					<input type="checkbox" [(ngModel)]="isMobileChecked" (ngModelChange)='onCheckBoxClick()'> {{mobileLabel}}
 				</label>
 			</li>
 		</ul>

@@ -46,7 +46,7 @@ describe('GridFilterPanelComponent', () => {
     const app = fixture.debugElement.componentInstance;
     
     app.isBroadbandChecked = true;    
-    app.onClick();
+    app.onCheckBoxClick();
     expect(app.filterArray[0]).toBe("Broadband");
     expect(app.filterArray.length).toBe(1);
   }));
@@ -56,7 +56,7 @@ describe('GridFilterPanelComponent', () => {
     const app = fixture.debugElement.componentInstance;
     
     app.isTvChecked = true;    
-    app.onClick();
+    app.onCheckBoxClick();
     expect(app.filterArray[0]).toBe("Entertainment");
   }));
 
@@ -65,7 +65,7 @@ describe('GridFilterPanelComponent', () => {
     const app = fixture.debugElement.componentInstance;
     
     app.isMobileChecked = true;    
-    app.onClick();
+    app.onCheckBoxClick();
     expect(app.filterArray[0]).toBe("Mobile");
   }));
 
@@ -75,7 +75,7 @@ describe('GridFilterPanelComponent', () => {
     
     app.isTvChecked = true; 
     app.isMobileChecked = true;    
-    app.onClick();
+    app.onCheckBoxClick();
     expect(app.filterArray[0]).toBe("Entertainment");
     expect(app.filterArray[1]).toBe("Mobile");
     expect(app.filterArray.length).toBe(2);
@@ -88,7 +88,7 @@ describe('GridFilterPanelComponent', () => {
     app.isBroadbandChecked = true;  
     app.isTvChecked = true; 
     app.isMobileChecked = true;    
-    app.onClick();
+    app.onCheckBoxClick();
     expect(app.filterArray[0]).toBe("Broadband");
     expect(app.filterArray[1]).toBe("Entertainment");
     expect(app.filterArray[2]).toBe("Mobile");

@@ -14,7 +14,7 @@ export class GridFilterPanelComponent {
   private isMobileChecked: boolean;
   private filterArray: Array<string>;
   
-  @Output() filterClicked: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();  
+  @Output() checkBoxFilterClicked: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();  
 
   constructor() {
     this.broadbandLabel = "Broadband";
@@ -26,7 +26,7 @@ export class GridFilterPanelComponent {
     this.filterArray = new Array<string>();
   }
 
-    public onClick() {
+    public onCheckBoxClick() {
       this.filterArray = []       
 
       if(this.isBroadbandChecked){
@@ -39,6 +39,6 @@ export class GridFilterPanelComponent {
         this.filterArray.push(this.mobileLabel);
       }
 
-      this.filterClicked.emit(this.filterArray);
+      this.checkBoxFilterClicked.emit(this.filterArray);
   }
 }

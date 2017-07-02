@@ -14,6 +14,8 @@ export class GridComponent {
     private dealsResponse: Array<Deal>;
     private dealService: DealService;
 
+    private gridFilterPanelCheckbox: Array<string>;
+
     private about: string;
     private contractLength: string;
     private speedUsage: string;
@@ -40,23 +42,9 @@ export class GridComponent {
       this.cost = "Cost";
   }
 
-    public onFilterClicked(filterArray: Array<string>): void {
-      
-      //todo find a better way as pushed for time
-      if(filterArray.length === 1){
-        this.dealsResponse = this.initialDealsResponse.filter(d => d.title.indexOf(filterArray[0]) !== -1);
-      }
+    public onGridFilterPanelBoxClicked(filterArray: Array<string>): void {
 
-      if(filterArray.length === 2){
-        this.dealsResponse = this.initialDealsResponse.filter(d => d.title.indexOf(filterArray[0]) !== -1 && d.title.indexOf(filterArray[1]) !== -1);
-      }
+      this.gridFilterPanelCheckbox = filterArray;
 
-      if(filterArray.length === 3){
-        this.dealsResponse = this.initialDealsResponse.filter(d => d.title.indexOf(filterArray[0]) !== -1 && d.title.indexOf(filterArray[1]) !== -1 && d.title.indexOf(filterArray[2]) !== -1);
-      }
-      
-      if(filterArray.length === 0){
-        this.dealsResponse = this.initialDealsResponse;
-      }
   }
 }
