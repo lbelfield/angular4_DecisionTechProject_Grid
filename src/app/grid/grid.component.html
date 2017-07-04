@@ -12,10 +12,23 @@
     <tr *ngFor="let deal of dealsResponse | dealFilterPipe:gridFilterPanelCheckbox">
         <td>{{deal.title}}</td>
         <td>{{deal.contractLength | contractLengthPipe}}</td>
-        <td>{{deal.speed.label}} {{deal.usage.label}}</td>
-        <td><img src="{{deal.offer.smallLogo}}"></td>
-        <td>{{tv}}</td>
-        <td>{{deal.mobile}}</td>
+        <td>
+            <div>{{deal.speed.label}}</div> 
+            <div>{{deal.usage.label}}</div>
+        </td>
+        <td><img id="offerPadding" src="{{deal.offer.smallLogo}}"></td>
+        <td id="tvPadding">
+            <div class="tvImages" *ngFor="let popularChannels of deal.popularChannels">
+                <img src="{{popularChannels.logo}}">
+            </div>
+        </td>
+        <td *ngIf="deal.mobile">
+            <div>{{mobileData}} {{deal.mobile.data.label}}</div>
+            <div>{{mobileMinutes}} {{deal.mobile.minutes.label}}</div>
+            <div>{{mobileTexts}} {{deal.mobile.texts.label}}</div>
+            <div>{{mobileConnection}} {{deal.mobile.connectionType.label}}</div>
+        </td>
+        <td *ngIf="!deal.mobile"></td>
         <td>{{cost}}</td>
     </tr>
 </table>

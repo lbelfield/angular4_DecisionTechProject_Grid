@@ -6,6 +6,7 @@ import { DealService } from '../shared/services/deal.service';
 @Component({
   selector: 'grid',
   templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.scss'],
   providers: [DealService]
 })
 export class GridComponent {
@@ -16,6 +17,7 @@ export class GridComponent {
 
     private gridFilterPanelCheckbox: Array<string>;
 
+    // titles
     private about: string;
     private contractLength: string;
     private speedUsage: string;
@@ -23,6 +25,12 @@ export class GridComponent {
     private tv: string;
     private mobile: string;
     private cost: string;
+
+    // labels
+    private mobileData: string;
+    private mobileMinutes: string;
+    private mobileTexts: string;
+    private mobileConnection: string; 
 
   constructor(dealService: DealService) {
     this.dealService = dealService;
@@ -40,6 +48,11 @@ export class GridComponent {
       this.tv = "TV";
       this.mobile = "Mobile";
       this.cost = "Cost";
+
+      this.mobileData = "Data:";
+      this.mobileMinutes = "Minutes:";
+      this.mobileTexts = "Texts:";
+      this.mobileConnection = "Connection:";
   }
 
     public onGridFilterPanelBoxClicked(filterArray: Array<string>): void {

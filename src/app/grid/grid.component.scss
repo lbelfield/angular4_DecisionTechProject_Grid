@@ -1,0 +1,16 @@
+@media screen and (max-width: 3000px) {
+table {
+    width: 70%;
+    float: left;
+    }
+    th {
+        width: 14%;
+    }
+    .tvImages {
+        width: 100%;
+        text-align: center;
+    }
+    #offerPadding, #tvPadding {
+        padding: 7px 7px 7px 7px
+    }
+}
